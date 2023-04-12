@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Editing</title>
+</head>
+<body>
+	<label for="inputText">Enter a string:</label>
+	<input type="text" id="inputText">
+	<button onclick="editString()">Edit String</button>
+	<div id="result"></div>
+
+	<script>
+		function editString() {
+			// Get input value
+			var input = document.getElementById("inputText").value;
+
+			// Create a new variable and edit string
+			var editedString = "";
+			for (var i = 0; i < input.length; i++) {
+				if (i % 2 == 0) {
+					editedString += input.charAt(i).toUpperCase();
+				} else {
+					editedString += input.charAt(i).toLowerCase();
+				}
+			}
+
+			// Display result on the DOM
+			var resultDiv = document.getElementById("result");
+			resultDiv.innerHTML = editedString;
+		}
+	</script>
+</body>
+</html>
